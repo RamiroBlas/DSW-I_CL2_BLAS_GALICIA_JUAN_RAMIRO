@@ -1,0 +1,49 @@
+﻿@model DSW_I_CL2_BLAS_GALICIA_JUAN_RAMIRO.Models.ClassCalcular
+
+@{
+	ViewData["Title"] = "Edit";
+	Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h1>Editar Caluclo</h1>
+
+<hr />
+<div class="row justify-content-center">
+	<div class="col-md-4">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Idcd" class="control-label"></label>
+				<input asp-for="Idcd" class="form-control" readonly />
+				<span asp-validation-for="Idcd" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Cliente" class="control-label"></label>
+				<input asp-for="Cliente" class="form-control" />
+				<span asp-validation-for="Cliente" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="CapaDiscoGB" class="control-label"></label>
+				<input asp-for="CapaDiscoGB" class="form-control" />
+				<span asp-validation-for="CapaDiscoGB" class="text-danger"></span>
+			</div>
+			<div style="text-align:center; margin-top: 20px;">
+				@if (!string.IsNullOrEmpty(ViewBag.mensaje))
+				{
+					<p style="color: green; font-weight: bold;">@ViewBag.mensaje</p>
+				}
+			</div>
+			<br />
+			<div class="form-group">
+				<input type="submit" value="Editar Calculo" class="btn btn-primary" />
+				<a asp-controller="DiscoSolido" asp-action="ListadoCalculos" class="btn btn-primary" style="margin-left: 10px;">Regresar</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

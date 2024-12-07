@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Estilos.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <img class="logo" src="~/img/banner.jpg" />
+    </header>
+
+    <nav>
+        <div class="menu">
+            <a href="@Url.Action("Index", "Home")" class="menu-item">Inicio</a>
+            <a href="@Url.Action("DiscoSolido", "DiscoSolido")" class="menu-item">Disco Solido</a>
+            <a href="@Url.Action("MemoRam", "MemoriaRam")" class="menu-item">Memorias Ram</a>
+            <a href="@Url.Action("Perifericos", "Periferico")" class="menu-item">Periféricos</a>
+            <a href="@Url.Action("Adaptadores", "Adaptador")" class="menu-item">Adaptadores</a>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div>
+            SOFTWARELIMA S.A.C <br />
+            Av. arequipa - lima 1128 - peru <br />
+            Telefono: 57897629 <br />
+            Mail: laboPeru@hotmail.com <br />
+        </div>
+        <div class="footer-rs">
+            <img src="~/img/Facebook.jpg" class="rs" />
+            <img src="~/img/twitter.jpg" class="rs" />
+            <img src="~/img/whatsapp.jpg" class="rs" />
+            <img src="~/img/youtube.jpg" class="rs" />
+        </div>
+    </footer>
+    @RenderSection("scripts", required:false)
+</body>
+</html>

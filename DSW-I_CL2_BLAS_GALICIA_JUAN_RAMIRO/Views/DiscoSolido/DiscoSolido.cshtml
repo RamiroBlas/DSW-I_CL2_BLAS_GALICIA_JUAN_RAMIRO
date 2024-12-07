@@ -1,0 +1,36 @@
+﻿@{
+	ViewBag.Title = "DISCO SOLIDO";
+	Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+
+}
+@model DSW_I_CL2_BLAS_GALICIA_JUAN_RAMIRO.Models.ClassCalcular
+
+<h1 style="text-align:center">Calcular Capacidad</h1>
+<div style="display: flex; justify-content: center; align-items: center;">
+	<form asp-controller="DiscoSolido" asp-action="Calcular" method="post" style="width: 300px;">
+		<div class="form-group">
+			<label for="Cliente" style="display: block; text-align: center;">Cliente</label>
+			<input type="text" id="Cliente" name="Cliente" class="form-control" required />
+		</div>
+		<div class="form-group">
+			<label for="CapaDiscoGB" style="display: block; text-align: center;">Capacidad del Disco Duro (GB):</label>
+			<input type="number" id="CapaDiscoGB" name="CapaDiscoGB" class="form-control" required />
+		</div>
+		<br />
+		<div style="text-align: center;">
+			<button type="submit" class="btn btn-primary">Calcular CDs</button>
+			<a asp-controller="DiscoSolido" asp-action="ListadoCalculos" class="btn btn-primary" style="margin-left: 10px;">Ver Listado</a>
+		</div>
+	</form>
+</div>
+@* <script>
+    document.getElementById("calcularForm").addEventListener("submit", function(event) {
+        var cliente = document.getElementById("Cliente").value.trim();
+        var capaDiscoGB = document.getElementById("CapaDiscoGB").value.trim();
+
+        if (cliente === "" || capaDiscoGB === "") {
+            event.preventDefault();
+            alert("Por favor, complete todos los campos antes de calcular.");
+        }
+    });
+</script> *@

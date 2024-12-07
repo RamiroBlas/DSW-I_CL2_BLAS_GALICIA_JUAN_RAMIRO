@@ -1,0 +1,50 @@
+﻿@model DSW_I_CL2_BLAS_GALICIA_JUAN_RAMIRO.Models.ClassCalcular
+
+@{
+	ViewData["Title"] = "Delete";
+	Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h1>Eliminar Calculo</h1>
+
+<h3>Usted desea eliminar el calculo?</h3>
+<div>
+	<hr />
+	<div class="row justify-content-center">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Idcd)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Idcd)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Cliente)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Cliente)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CapaDiscoGB)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CapaDiscoGB)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CapaCdMB)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CapaCdMB)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.TotalCds)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.TotalCds)
+		</dd>
+	</div>
+
+	<form asp-action="Delete">
+		<input type="submit" value="Eliminar Calculo" class="btn btn-danger" /> |
+		<a asp-controller="DiscoSolido" asp-action="ListadoCalculos" class="btn btn-primary" style="margin-left: 10px;">Regresar</a>
+	</form>
+</div>

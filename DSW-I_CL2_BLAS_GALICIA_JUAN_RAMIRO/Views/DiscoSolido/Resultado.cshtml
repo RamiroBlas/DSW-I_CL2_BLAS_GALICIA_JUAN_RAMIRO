@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "RESULTADO";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+@model DSW_I_CL2_BLAS_GALICIA_JUAN_RAMIRO.Models.ClassCalcular
+
+<h1 style="text-align:center">Respuesta del Cálculo:</h1>
+
+<div style="text-align:center; margin-top: 20px;">
+    <p>Para el cliente <strong>@Model.Cliente</strong>:</p>
+    <p>Con un disco duro de <strong>@Model.CapaDiscoGB GB</strong> de capacidad de almacenamiento:</p>
+    <p>Se necesita un total de <strong>@Model.TotalCds</strong> CDs para hacer una copia de seguridad.</p>
+</div>
+
+<div style="text-align:center; margin-top: 20px;">
+    @if (!string.IsNullOrEmpty(ViewBag.mensaje))
+    {
+        <p style="color: green; font-weight: bold;">@ViewBag.mensaje</p>
+    }
+</div>
+
+<div style="text-align:center; margin-top: 20px;">
+    <a asp-controller="DiscoSolido" asp-action="DiscoSolido" class="btn btn-secondary">Regresar</a>
+    <a asp-controller="DiscoSolido" asp-action="ListadoCalculos" class="btn btn-primary" style="margin-left: 10px;">Ver Listado</a>
+</div>
